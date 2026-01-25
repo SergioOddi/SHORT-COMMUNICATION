@@ -1,0 +1,4 @@
+#Short-comunication
+AIM: project for writing a short communication of scientific results.
+
+crea delle cartelle per un progetto in lingua inglese con DATASET, MANUSCRIPT, e ogni altra cartella che riterrai utile per gestire le attività previste: voglio scrivere un report scientifico a partire dai dati e dalle figure che produrrò a partire da questi dati. Intendo usare script R per analizzare e graficare i dati. Il testo del manoscritto dovrebbe essere in un formato che mi permetta di inserire e gestire comodamente referenze ad articoli scientifici (e permettere la formattazione di una sezione dedicata alle References). 
