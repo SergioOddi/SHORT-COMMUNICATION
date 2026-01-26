@@ -57,7 +57,7 @@
 
 ## VERSIONE 5 - STILE "NATURE-LIKE" (235 parole)
 
-Sexual dimorphism profoundly influences Alzheimer's disease (AD) pathogenesis, yet most preclinical therapeutic studies employ only male subjects. Palmitoylethanolamide (PEA), an endogenous lipid mediator with PPAR-α agonist properties, ameliorates cognitive deficits and synaptic loss in male Tg2576 mice. Here, we demonstrate complete therapeutic failure of PEA in female Tg2576 mice and identify the underlying molecular mechanism.
+Sexual dimorphism profoundly influences Alzheimer's disease (AD) pathogenesis, yet most preclinical therapeutic studies employ only male subjects. Palmitoylethanolamide (PEA), an endogenous lipid mediator with PPAR-α agonist properties, ameliorates cognitive deficits and synaptic loss in male Tg2576 mice. Here, we demonstrate complete therapeutic failure of PEA in female Tg2576 mice and suggest a possible underlying molecular mechanism.
 
 Female Tg2576 mice treated with PEA (30 mg/kg/day, 6 months) showed no improvement in cognitive performance, dendritic spine density, or nitrosative stress—endpoints robustly rescued in males. Mechanistic investigation revealed massive upregulation of PEA-degrading enzymes in females: FAAH (fatty acid amide hydrolase) and NAAA (N-acylethanolamine acid amidase) exhibited ~4-fold higher enzymatic activity in female versus male Tg2576 hippocampus, with corresponding increases in mRNA and protein expression. This hyperactive catabolic machinery creates a "metabolic sink" that degrades exogenous PEA before it reaches therapeutically effective concentrations.
 
