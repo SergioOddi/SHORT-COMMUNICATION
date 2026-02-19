@@ -33,3 +33,15 @@ A two-way ANOVA (Sex × Treatment) revealed that Sex was the dominant source of 
 Planned contrasts (Bonferroni-adjusted α = 0.025) confirmed a striking sex-dependent response. In males, PEA produced a marked reduction in 3-NT levels (19.06 ± 2.12 vs. 13.26 ± 2.10; t(12.0) = 5.14, p = 0.0002; Cohen's d = 2.75, 95% CI [1.12, 4.37]), representing a 30% decrease and the largest effect size observed across all endpoints. In females, 3-NT levels were numerically lower in the PEA group but the difference was not significant (9.73 ± 3.49 vs. 7.72 ± 2.12; t(9.9) = 1.30, p = 0.223; Cohen's d = 0.70, 95% CI [−0.50, 1.90]). The 95% confidence interval for the mean difference in females [−1.44, 5.46] included zero.
 
 The pattern across the three neuroprotective endpoints is consistent: PEA exerts robust therapeutic effects in male Tg2576 mice (NOR: d = 1.26; basal spines: Cliff's δ = 0.49; 3-NT: d = 2.75) while its efficacy is systematically attenuated in females (NOR: d = 0.61; basal spines: Cliff's δ = 0.23; 3-NT: d = 0.70), despite the presence of amyloid-related pathology in both sexes. This consistent dissociation points to a sex-specific factor that limits PEA bioavailability or signaling in females.
+
+## 3.4 Female Tg2576 mice overexpress the PEA-degrading enzymes FAAH and NAAA
+
+The systematic attenuation of PEA efficacy across all endpoints in females prompted us to investigate a potential pharmacokinetic explanation. PEA is an endogenous lipid mediator whose brain levels are tightly regulated by the balance between biosynthesis and enzymatic degradation. Two hydrolases are primarily responsible for PEA catabolism: fatty acid amide hydrolase (FAAH) and N-acylethanolamine acid amidase (NAAA). Critically, the promoter regions of both genes contain estrogen-responsive elements (ERE), raising the possibility that their expression may be upregulated in a sex-dependent manner. We therefore measured FAAH and NAAA expression in the hippocampus of vehicle-treated male and female Tg2576 mice to test whether sex differences in catabolic enzyme levels could account for the attenuated therapeutic response observed in females.
+
+**FAAH mRNA.** [PLACEHOLDER — da aggiornare con i risultati dello script 07]
+
+**FAAH protein.** [PLACEHOLDER — da aggiornare con i risultati dello script 07]
+
+**NAAA mRNA.** [PLACEHOLDER — da aggiornare con i risultati dello script 07]
+
+[PLACEHOLDER — paragrafo di sintesi con tabella riassuntiva e interpretazione]

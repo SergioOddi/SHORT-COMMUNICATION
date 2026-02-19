@@ -1,0 +1,118 @@
+Analisi eseguita il: 2026-02-19 15:42:55 
+
+indexing faah_genico.csv [======================================================================================] 17.28MB/s, eta:  0s                                                                                                                                     =======================================================================
+  FAAH MRNA — Tg MASCHI vs Tg FEMMINE
+  Ipotesi: espressione maggiore nelle femmine
+  Test indipendente (α = 0.05)
+=======================================================================
+
+--- Statistiche descrittive ---
+
+# A tibble: 2 × 7
+  group             n   mean      sd median    min   max
+  <chr>         <int>  <dbl>   <dbl>  <dbl>  <dbl> <dbl>
+1 Tg_female_veh     6 0.0442 0.0299  0.0312 0.02   0.101
+2 Tg_male_veh       6 0.0174 0.00609 0.0176 0.0072 0.026
+
+  Fold change (femmine / maschi) = 2.55
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+  Maschi:  W = 0.938, p = 0.6448  (normale)
+  Femmine: W = 0.778, p = 0.0369  (NON normale)
+
+→ Test non parametrico: Mann-Whitney U + Cliff's delta
+
+Mann-Whitney U: W = 35.0, p = 0.0043
+  Median maschi  = 0.017600 (IQR = 0.002975, n = 6)
+  Median femmine = 0.031200 (IQR = 0.018275, n = 6)
+  Hodges-Lehmann estimate = 0.014000
+  IC 95%: [0.004000, 0.075000]
+
+  p < 0.05? SI
+
+  Cliff's delta = 0.944  [IC 95%: 0.662, 0.992]
+  Interpretazione: large
+  (delta positivo → femmine > maschi)
+indexing faah_proteica.csv [====================================================================================] 21.97MB/s, eta:  0s                                                                                                                                     =======================================================================
+  FAAH PROTEINA — Tg MASCHI vs Tg FEMMINE
+  Ipotesi: espressione maggiore nelle femmine
+  Test indipendente (α = 0.05)
+=======================================================================
+
+--- Statistiche descrittive ---
+
+# A tibble: 2 × 7
+  group             n  mean    sd median   min   max
+  <chr>         <int> <dbl> <dbl>  <dbl> <dbl> <dbl>
+1 Tg_female_veh     6 0.777 0.157  0.824 0.581 0.924
+2 Tg_male_veh       6 0.361 0.128  0.357 0.226 0.539
+
+  Fold change (femmine / maschi) = 2.15
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+  Maschi:  W = 0.893, p = 0.3341  (normale)
+  Femmine: W = 0.833, p = 0.1142  (normale)
+
+→ Test parametrico: Welch t-test + Cohen's d
+
+Welch t-test: t = 5.032, df = 9.6, p = 0.0006
+  Mean maschi  = 0.360933 (SD = 0.127884, n = 6)
+  Mean femmine = 0.777200 (SD = 0.157160, n = 6)
+  Differenza media (femmine - maschi) = 0.416267
+  IC 95%: [0.230922, 0.601611]
+
+  p < 0.05? SI
+
+  Cohen's d = 2.905  [IC 95%: 1.061, 4.750]
+  Interpretazione: large
+  (d positivo → femmine > maschi)
+indexing naah_genico.csv [======================================================================================] 20.57MB/s, eta:  0s                                                                                                                                     =======================================================================
+  NAAH MRNA — Tg MASCHI vs Tg FEMMINE
+  Ipotesi: espressione maggiore nelle femmine
+  Test indipendente (α = 0.05)
+=======================================================================
+
+--- Statistiche descrittive ---
+
+# A tibble: 2 × 7
+  group             n    mean      sd  median   min    max
+  <chr>         <int>   <dbl>   <dbl>   <dbl> <dbl>  <dbl>
+1 Tg_female_veh     6 0.00715 0.00352 0.0075  0.002 0.0125
+2 Tg_male_veh       6 0.0049  0.00253 0.00455 0.001 0.008 
+
+  Fold change (femmine / maschi) = 1.46
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+  Maschi:  W = 0.945, p = 0.7001  (normale)
+  Femmine: W = 0.979, p = 0.9442  (normale)
+
+→ Test parametrico: Welch t-test + Cohen's d
+
+Welch t-test: t = 1.271, df = 9.1, p = 0.2352
+  Mean maschi  = 0.004900 (SD = 0.002525, n = 6)
+  Mean femmine = 0.007150 (SD = 0.003523, n = 6)
+  Differenza media (femmine - maschi) = 0.002250
+  IC 95%: [-0.001749, 0.006249]
+
+  p < 0.05? NO
+
+  Cohen's d = 0.734  [IC 95%: -0.595, 2.063]
+  Interpretazione: medium
+  (d positivo → femmine > maschi)
+
+=======================================================================
+  TABELLA RIASSUNTIVA — ENZIMI DI DEGRADAZIONE DELLA PEA
+  Confronto: Tg femmine vs Tg maschi (vehicle)
+=======================================================================
+
+Enzima           Test             Stat          p         ES     FC p < 0.05
+---------------------------------------------------------------------------------- 
+FAAH mRNA        Cliff's d      35.000     0.0043      0.944   2.55 SI *
+FAAH proteina    Cohen's d       5.032     0.0006      2.905   2.15 SI *
+NAAH mRNA        Cohen's d       1.271     0.2352      0.734   1.46 NO
+
+FC = fold change (femmine / maschi). FC > 1 = espressione maggiore nelle femmine.
+ES positivo = femmine > maschi.
