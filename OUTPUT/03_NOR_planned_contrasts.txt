@@ -1,0 +1,92 @@
+=======================================================================
+  NOR TEST — CONFRONTI PIANIFICATI (Solo Tg2576)
+  Ipotesi a priori: PEA migliora la performance in entrambi i sessi
+  Correzione Bonferroni per 2 confronti (α = 0.025)
+=======================================================================
+Analisi eseguita il: 2026-02-19 14:18:25 
+
+--- Statistiche descrittive ---
+
+# A tibble: 4 × 8
+  sex    treatment     n  mean    sd median   min   max
+  <chr>  <chr>     <int> <dbl> <dbl>  <dbl> <dbl> <dbl>
+1 female PEA          12  59.1 10.3    55.5  48    78.8
+2 female veh          12  53.8  6.71   55.3  43.5  63.6
+3 male   PEA          10  57.5 13.0    56.2  39.6  75  
+4 male   veh           8  44.5  5.17   45.0  37.5  51.2
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+# A tibble: 4 × 5
+  sex    treatment     n  SW_W   SW_p
+  <chr>  <chr>     <int> <dbl>  <dbl>
+1 female PEA          12 0.866 0.0578
+2 female veh          12 0.949 0.622 
+3 male   PEA          10 0.927 0.422 
+4 male   veh           8 0.938 0.589 
+
+Tutti i gruppi normali (p > 0.05):  TRUE 
+
+=======================================================================
+  ANOVA 2 VIE (Sex × Treatment) — analisi omnibus di contesto
+=======================================================================
+
+              Df Sum Sq Mean Sq F value  Pr(>F)   
+sex            1    236   236.3   2.670 0.11051   
+treatment      1    769   769.0   8.689 0.00545 **
+sex:treatment  1    151   151.2   1.708 0.19907   
+Residuals     38   3363    88.5                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Eta-squared (η²):
+  Sex:              η² = 0.0523
+  Treatment:        η² = 0.1701
+  Sex × Treatment:  η² = 0.0334
+
+=======================================================================
+  CONFRONTO 1: Tg MASCHI — veh vs PEA
+  (Replicazione del dato pubblicato, Tortolani et al. 2025)
+=======================================================================
+
+Welch t-test: t = 2.898, df = 12.3, p = 0.0131
+  Mean veh = 44.46 (SD = 5.17, n = 8)
+  Mean PEA = 57.47 (SD = 12.96, n = 10)
+  Differenza media = 13.00
+  IC 95% della differenza: [3.25, 22.75]
+
+  p < 0.025 (Bonferroni)? SI
+
+  Cohen's d = 1.262  [IC 95%: 0.162, 2.362]
+  Interpretazione: large
+
+=======================================================================
+  CONFRONTO 2: Tg FEMMINE — veh vs PEA
+  (Estensione alle femmine — dato nuovo)
+=======================================================================
+
+Welch t-test: t = 1.494, df = 18.9, p = 0.1517
+  Mean veh = 53.83 (SD = 6.71, n = 12)
+  Mean PEA = 59.13 (SD = 10.31, n = 12)
+  Differenza media = 5.31
+  IC 95% della differenza: [-2.13, 12.74]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cohen's d = 0.610  [IC 95%: -0.256, 1.476]
+  Interpretazione: medium
+
+=======================================================================
+  RIEPILOGO
+=======================================================================
+
+Confronto                   t        p  Cohen's d  Magnitude Bonf.(p<.025)
+--------------------------------------------------------------------------- 
+Maschi (PEA vs veh)     2.898   0.0131      1.262      large SI *
+Femmine (PEA vs veh)    1.494   0.1517      0.610     medium NO
+
+-----------------------------------------------------------------------
+Interpretazione:
+  Cohen's d: |d| < 0.2 = trascurabile, 0.2-0.5 = piccolo,
+             0.5-0.8 = medio, > 0.8 = grande
+-----------------------------------------------------------------------

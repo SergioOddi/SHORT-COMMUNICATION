@@ -1,0 +1,421 @@
+Analisi eseguita il: 2026-02-19 14:07:40 
+
+ ====================================================================== 
+  FAAH mRNA (Tg_male vs Tg_female) 
+====================================================================== 
+indexing faah_genico.csv [======================================================================================] 25.41MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 2 × 5
+  group             n  SW_W   SW_p normal
+  <chr>         <int> <dbl>  <dbl> <lgl> 
+1 Tg_female_veh     6 0.778 0.0369 FALSE 
+2 Tg_male_veh       6 0.938 0.645  TRUE  
+
+→ Distribuzione non normale in almeno un gruppo: Mann-Whitney U
+  W = 1.0, p = 0.0043
+  Median Tg_male_veh = 0.0176 | Median Tg_female_veh = 0.0312
+
+Statistiche descrittive:
+# A tibble: 2 × 5
+  group             n   mean      sd median
+  <chr>         <int>  <dbl>   <dbl>  <dbl>
+1 Tg_female_veh     6 0.0442 0.0299  0.0312
+2 Tg_male_veh       6 0.0174 0.00609 0.0176
+
+ ====================================================================== 
+  FAAH proteina (Tg_male vs Tg_female) 
+====================================================================== 
+indexing faah_proteica.csv [====================================================================================] 10.99MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 2 × 5
+  group             n  SW_W  SW_p normal
+  <chr>         <int> <dbl> <dbl> <lgl> 
+1 Tg_female_veh     6 0.833 0.114 TRUE  
+2 Tg_male_veh       6 0.893 0.334 TRUE  
+
+→ Distribuzione normale in tutti i gruppi: t-test indipendente
+  t = -5.032, df = 9.6, p = 0.0006
+  Mean Tg_male_veh = 0.3609 | Mean Tg_female_veh = 0.7772
+
+Statistiche descrittive:
+# A tibble: 2 × 5
+  group             n  mean    sd median
+  <chr>         <int> <dbl> <dbl>  <dbl>
+1 Tg_female_veh     6 0.777 0.157  0.824
+2 Tg_male_veh       6 0.361 0.128  0.357
+
+ ====================================================================== 
+  NAAH mRNA (Tg_male vs Tg_female) 
+====================================================================== 
+indexing naah_genico.csv [======================================================================================] 17.28MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 2 × 5
+  group             n  SW_W  SW_p normal
+  <chr>         <int> <dbl> <dbl> <lgl> 
+1 Tg_female_veh     6 0.979 0.944 TRUE  
+2 Tg_male_veh       6 0.945 0.700 TRUE  
+
+→ Distribuzione normale in tutti i gruppi: t-test indipendente
+  t = -1.271, df = 9.1, p = 0.2352
+  Mean Tg_male_veh = 0.0049 | Mean Tg_female_veh = 0.0072
+
+Statistiche descrittive:
+# A tibble: 2 × 5
+  group             n    mean      sd  median
+  <chr>         <int>   <dbl>   <dbl>   <dbl>
+1 Tg_female_veh     6 0.00715 0.00352 0.0075 
+2 Tg_male_veh       6 0.0049  0.00253 0.00455
+
+ ====================================================================== 
+  3-Nitrotyrosine (Sex × Treatment) 
+====================================================================== 
+indexing 3nt.csv [==============================================================================================] 50.67MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 4 × 5
+  group             n  SW_W  SW_p normal
+  <chr>         <int> <dbl> <dbl> <lgl> 
+1 Tg_female_PEA     7 0.899 0.324 TRUE  
+2 Tg_female_veh     7 0.920 0.472 TRUE  
+3 Tg_male_PEA       7 0.871 0.190 TRUE  
+4 Tg_male_veh       7 0.969 0.895 TRUE  
+
+→ Distribuzione normale: ANOVA 2 vie (Sex × Treatment) + Tukey
+
+ANOVA:
+              Df Sum Sq Mean Sq F value   Pr(>F)    
+sex            1  386.8   386.8  60.453 5.21e-08 ***
+treatment      1  106.6   106.6  16.653  0.00043 ***
+sex:treatment  1   25.1    25.1   3.917  0.05939 .  
+Residuals     24  153.6     6.4                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Post-hoc Tukey HSD:
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = value ~ sex * treatment, data = long)
+
+$sex
+                diff      lwr      upr p adj
+male-female 7.433609 5.460379 9.406838 1e-07
+
+$treatment
+            diff      lwr      upr     p adj
+veh-PEA 3.901484 1.928255 5.874714 0.0004296
+
+$`sex:treatment`
+                           diff       lwr        upr     p adj
+male:PEA-female:PEA    5.541501  1.811625  9.2713770 0.0021734
+female:veh-female:PEA  2.009377 -1.720499  5.7392526 0.4610072
+male:veh-female:PEA   11.335093  7.605217 15.0649687 0.0000001
+female:veh-male:PEA   -3.532124 -7.262000  0.1977514 0.0679664
+male:veh-male:PEA      5.793592  2.063716  9.5234676 0.0013689
+male:veh-female:veh    9.325716  5.595840 13.0555920 0.0000022
+
+
+Statistiche descrittive:
+# A tibble: 4 × 5
+  group             n  mean    sd median
+  <chr>         <int> <dbl> <dbl>  <dbl>
+1 Tg_female_PEA     7  7.72  2.12   7.08
+2 Tg_female_veh     7  9.73  3.49   8.34
+3 Tg_male_PEA       7 13.3   2.10  13.9 
+4 Tg_male_veh       7 19.1   2.12  19.1 
+
+ ====================================================================== 
+  IBA1 (Sex × Treatment) 
+====================================================================== 
+indexing iba1.csv [=============================================================================================] 42.78MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 4 × 5
+  group             n  SW_W   SW_p normal
+  <chr>         <int> <dbl>  <dbl> <lgl> 
+1 Tg_female_PEA     4 0.967 0.820  TRUE  
+2 Tg_female_veh     4 0.856 0.245  TRUE  
+3 Tg_male_PEA       5 0.792 0.0701 TRUE  
+4 Tg_male_veh       5 0.757 0.0348 FALSE 
+
+→ Distribuzione non normale: Kruskal-Wallis + post-hoc Dunn
+  Kruskal-Wallis: chi-sq = 3.528, df = 3, p = 0.3171
+
+Post-hoc Dunn (Bonferroni):
+
+Statistiche descrittive:
+# A tibble: 4 × 5
+  group             n    mean      sd  median
+  <chr>         <int>   <dbl>   <dbl>   <dbl>
+1 Tg_female_PEA     4 0.00404 0.00197 0.00381
+2 Tg_female_veh     4 0.0174  0.0167  0.0156 
+3 Tg_male_PEA       5 0.00460 0.00398 0.00363
+4 Tg_male_veh       5 0.00301 0.00197 0.00240
+
+ ====================================================================== 
+  GFAP (Sex × Treatment) 
+====================================================================== 
+indexing gfap.csv [=============================================================================================] 32.41MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 4 × 5
+  group             n  SW_W  SW_p normal
+  <chr>         <int> <dbl> <dbl> <lgl> 
+1 Tg_female_PEA     4 0.927 0.580 TRUE  
+2 Tg_female_veh     4 0.898 0.423 TRUE  
+3 Tg_male_PEA       5 0.955 0.770 TRUE  
+4 Tg_male_veh       5 0.937 0.646 TRUE  
+
+→ Distribuzione normale: ANOVA 2 vie (Sex × Treatment) + Tukey
+
+ANOVA:
+              Df   Sum Sq  Mean Sq F value Pr(>F)  
+sex            1 0.000132 0.000132   0.083 0.7780  
+treatment      1 0.000011 0.000011   0.007 0.9353  
+sex:treatment  1 0.005840 0.005840   3.642 0.0771 .
+Residuals     14 0.022447 0.001603                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Post-hoc Tukey HSD:
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = value ~ sex * treatment, data = long)
+
+$sex
+                    diff         lwr        upr     p adj
+male-female -0.005459569 -0.04619713 0.03527799 0.7779861
+
+$treatment
+               diff       lwr        upr     p adj
+veh-PEA 0.001560313 -0.038925 0.04204563 0.9352917
+
+$`sex:treatment`
+                              diff         lwr        upr     p adj
+male:PEA-female:PEA    0.030788832 -0.04728513 0.10886280 0.6684035
+female:veh-female:PEA  0.041836315 -0.04046087 0.12413350 0.4756736
+male:veh-female:PEA    0.000128344 -0.07794562 0.07820231 1.0000000
+female:veh-male:PEA    0.011047483 -0.06702648 0.08912145 0.9756255
+male:veh-male:PEA     -0.030660488 -0.10426933 0.04294835 0.6304703
+male:veh-female:veh   -0.041707971 -0.11978194 0.03636599 0.4346912
+
+
+Statistiche descrittive:
+# A tibble: 4 × 5
+  group             n   mean     sd median
+  <chr>         <int>  <dbl>  <dbl>  <dbl>
+1 Tg_female_PEA     4 0.0643 0.0204 0.0687
+2 Tg_female_veh     4 0.106  0.0536 0.0979
+3 Tg_male_PEA       5 0.0951 0.0477 0.108 
+4 Tg_male_veh       5 0.0644 0.0294 0.0640
+
+ ====================================================================== 
+  iNOS (Sex × Treatment) 
+====================================================================== 
+indexing inos.csv [=============================================================================================] 42.95MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 4 × 5
+  group             n  SW_W   SW_p normal
+  <chr>         <int> <dbl>  <dbl> <lgl> 
+1 Tg_female_PEA     4 0.980 0.903  TRUE  
+2 Tg_female_veh     4 0.989 0.953  TRUE  
+3 Tg_male_PEA       5 0.759 0.0360 FALSE 
+4 Tg_male_veh       5 0.851 0.198  TRUE  
+
+→ Distribuzione non normale: Kruskal-Wallis + post-hoc Dunn
+  Kruskal-Wallis: chi-sq = 4.721, df = 3, p = 0.1934
+
+Post-hoc Dunn (Bonferroni):
+
+Statistiche descrittive:
+# A tibble: 4 × 5
+  group             n      mean        sd    median
+  <chr>         <int>     <dbl>     <dbl>     <dbl>
+1 Tg_female_PEA     4 0.000102  0.0000222 0.000103 
+2 Tg_female_veh     4 0.000129  0.0000286 0.000130 
+3 Tg_male_PEA       5 0.0000717 0.000102  0.0000253
+4 Tg_male_veh       5 0.0000691 0.0000819 0.0000474
+
+ ====================================================================== 
+  NOR Test (Genotipo × Sex × Treatment) 
+====================================================================== 
+indexing nor_test.csv [========================================================================================] 126.50MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 8 × 5
+  group             n  SW_W   SW_p normal
+  <chr>         <int> <dbl>  <dbl> <lgl> 
+1 Tg_female_PEA    12 0.866 0.0578 TRUE  
+2 Tg_female_veh    12 0.949 0.622  TRUE  
+3 Tg_male_PEA      10 0.927 0.422  TRUE  
+4 Tg_male_veh       8 0.938 0.589  TRUE  
+5 WT_female_PEA     7 0.870 0.186  TRUE  
+6 WT_female_veh     9 0.943 0.613  TRUE  
+7 WT_male_PEA      11 0.941 0.534  TRUE  
+8 WT_male_veh       8 0.851 0.0968 TRUE  
+
+--- Genotipo: WT ---
+→ Distribuzione normale: ANOVA 2 vie (Sex × Treatment) + Tukey
+              Df Sum Sq Mean Sq F value Pr(>F)  
+sex            1    352   351.9   2.650 0.1137  
+treatment      1    458   458.2   3.451 0.0728 .
+sex:treatment  1     13    12.6   0.095 0.7599  
+Residuals     31   4117   132.8                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Post-hoc Tukey HSD:
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = value ~ sex * treatment, data = sub)
+
+$sex
+                 diff       lwr      upr     p adj
+male-female -6.365442 -14.34036 1.609475 0.1136678
+
+$treatment
+           diff        lwr      upr     p adj
+veh-PEA 7.16743 -0.7813825 15.11624 0.0755078
+
+$`sex:treatment`
+                           diff        lwr       upr     p adj
+male:PEA-female:PEA   -4.119237 -19.241425 11.002952 0.8804621
+female:veh-female:PEA  8.629341  -7.132737 24.391419 0.4578688
+male:veh-female:PEA    2.074286 -14.113050 18.261622 0.9852741
+female:veh-male:PEA   12.748578  -1.309345 26.806501 0.0864222
+male:veh-male:PEA      6.193523  -8.339609 20.726655 0.6579715
+male:veh-female:veh   -6.555055 -21.752899  8.642789 0.6494467
+
+
+--- Genotipo: Tg ---
+→ Distribuzione normale: ANOVA 2 vie (Sex × Treatment) + Tukey
+              Df Sum Sq Mean Sq F value  Pr(>F)   
+sex            1    236   236.3   2.670 0.11051   
+treatment      1    769   769.0   8.689 0.00545 **
+sex:treatment  1    151   151.2   1.708 0.19907   
+Residuals     38   3363    88.5                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Post-hoc Tukey HSD:
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = value ~ sex * treatment, data = sub)
+
+$sex
+                 diff       lwr      upr     p adj
+male-female -4.793137 -10.73139 1.145115 0.1105146
+
+$treatment
+             diff       lwr     upr     p adj
+veh-PEA -8.554721 -14.43874 -2.6707 0.0055117
+
+$`sex:treatment`
+                            diff       lwr       upr     p adj
+male:PEA-female:PEA    -1.667934 -12.48936  9.153489 0.9757273
+female:veh-female:PEA  -5.306259 -15.62408  5.011563 0.5183398
+male:veh-female:PEA   -14.669184 -26.20486 -3.133508 0.0079679
+female:veh-male:PEA    -3.638325 -14.45975  7.183097 0.8031742
+male:veh-male:PEA     -13.001250 -24.98948 -1.013024 0.0291285
+male:veh-female:veh    -9.362925 -20.89860  2.172751 0.1470920
+
+
+Statistiche descrittive:
+# A tibble: 8 × 5
+  group             n  mean    sd median
+  <chr>         <int> <dbl> <dbl>  <dbl>
+1 Tg_female_PEA    12  59.1 10.3    55.5
+2 Tg_female_veh    12  53.8  6.71   55.3
+3 Tg_male_PEA      10  57.5 13.0    56.2
+4 Tg_male_veh       8  44.5  5.17   45.0
+5 WT_female_PEA     7  57.4  6.92   54.5
+6 WT_female_veh     9  66.1 11.5    66.1
+7 WT_male_PEA      11  53.3 10.3    55.6
+8 WT_male_veh       8  59.5 15.6    55.7
+
+ ====================================================================== 
+  Apical Spine Density (Genotipo × Sex × Treatment) 
+====================================================================== 
+indexing apical_spine.csv [=====================================================================================] 35.27MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 8 × 5
+  group             n  SW_W     SW_p normal
+  <chr>         <int> <dbl>    <dbl> <lgl> 
+1 Tg_female_PEA    20 0.923 0.112    TRUE  
+2 Tg_female_veh    19 0.904 0.0585   TRUE  
+3 Tg_male_PEA      20 0.842 0.00398  FALSE 
+4 Tg_male_veh      20 0.811 0.00125  FALSE 
+5 WT_female_PEA    19 0.924 0.132    TRUE  
+6 WT_female_veh    20 0.901 0.0427   FALSE 
+7 WT_male_PEA      20 0.804 0.000993 FALSE 
+8 WT_male_veh      20 0.883 0.0202   FALSE 
+
+--- Genotipo: WT ---
+→ Distribuzione non normale: Kruskal-Wallis + post-hoc Dunn
+  Kruskal-Wallis: chi-sq = 30.332, df = 3, p = 0.0000
+
+Post-hoc Dunn (Bonferroni):
+
+--- Genotipo: Tg ---
+→ Distribuzione non normale: Kruskal-Wallis + post-hoc Dunn
+  Kruskal-Wallis: chi-sq = 30.264, df = 3, p = 0.0000
+
+Post-hoc Dunn (Bonferroni):
+
+Statistiche descrittive:
+# A tibble: 8 × 5
+  group             n  mean    sd median
+  <chr>         <int> <dbl> <dbl>  <dbl>
+1 Tg_female_PEA    20  2.64 0.946   2.64
+2 Tg_female_veh    19  2.21 0.500   2.27
+3 Tg_male_PEA      20  1.69 0.614   1.49
+4 Tg_male_veh      20  1.42 0.404   1.30
+5 WT_female_PEA    19  2.53 0.666   2.38
+6 WT_female_veh    20  2.30 0.767   2.20
+7 WT_male_PEA      20  1.50 0.272   1.46
+8 WT_male_veh      20  1.66 0.430   1.52
+
+ ====================================================================== 
+  Basal Spine Density (Genotipo × Sex × Treatment) 
+====================================================================== 
+indexing basal_spine.csv [=====================================================================================] 147.47MB/s, eta:  0s                                                                                                                                     
+Test di normalità (Shapiro-Wilk):
+# A tibble: 8 × 5
+  group             n  SW_W     SW_p normal
+  <chr>         <int> <dbl>    <dbl> <lgl> 
+1 Tg_female_PEA    20 0.902 0.0445   FALSE 
+2 Tg_female_veh    19 0.863 0.0109   FALSE 
+3 Tg_male_PEA      20 0.877 0.0155   FALSE 
+4 Tg_male_veh      20 0.934 0.187    TRUE  
+5 WT_female_PEA    19 0.881 0.0227   FALSE 
+6 WT_female_veh    20 0.913 0.0733   TRUE  
+7 WT_male_PEA      20 0.827 0.00225  FALSE 
+8 WT_male_veh      20 0.794 0.000704 FALSE 
+
+--- Genotipo: WT ---
+→ Distribuzione non normale: Kruskal-Wallis + post-hoc Dunn
+  Kruskal-Wallis: chi-sq = 26.126, df = 3, p = 0.0000
+
+Post-hoc Dunn (Bonferroni):
+
+--- Genotipo: Tg ---
+→ Distribuzione non normale: Kruskal-Wallis + post-hoc Dunn
+  Kruskal-Wallis: chi-sq = 36.000, df = 3, p = 0.0000
+
+Post-hoc Dunn (Bonferroni):
+
+Statistiche descrittive:
+# A tibble: 8 × 5
+  group             n  mean    sd median
+  <chr>         <int> <dbl> <dbl>  <dbl>
+1 Tg_female_PEA    20  2.61 0.823   2.64
+2 Tg_female_veh    19  2.11 0.348   2.11
+3 Tg_male_PEA      20  1.60 0.470   1.5 
+4 Tg_male_veh      20  1.21 0.522   1.21
+5 WT_female_PEA    19  2.15 0.623   2.12
+6 WT_female_veh    20  2.26 0.729   2.22
+7 WT_male_PEA      20  1.52 0.396   1.37
+8 WT_male_veh      20  1.47 0.319   1.40
+
+ ====================================================================== 
+  ANALISI COMPLETATA
+====================================================================== 

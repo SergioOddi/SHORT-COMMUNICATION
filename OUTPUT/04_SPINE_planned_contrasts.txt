@@ -1,0 +1,168 @@
+Analisi eseguita il: 2026-02-19 14:28:28 
+
+indexing apical_spine.csv [====================================================================================] 176.36MB/s, eta:  0s                                                                                                                                     =======================================================================
+  SPINE DENDRITICHE APICALI (CA1) — CONFRONTI PIANIFICATI (Solo Tg2576)
+  Ipotesi a priori: PEA ripristina la densità in entrambi i sessi
+  Correzione Bonferroni per 2 confronti (α = 0.025)
+=======================================================================
+
+--- Statistiche descrittive ---
+
+# A tibble: 4 × 8
+  sex    treatment     n  mean    sd median   min   max
+  <chr>  <chr>     <int> <dbl> <dbl>  <dbl> <dbl> <dbl>
+1 female PEA          20  2.64 0.946   2.64  1.18  4.16
+2 female veh          19  2.21 0.500   2.27  1.37  3.16
+3 male   PEA          20  1.69 0.614   1.49  1.05  3.24
+4 male   veh          20  1.42 0.404   1.30  1.04  2.32
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+# A tibble: 4 × 5
+  sex    treatment     n  SW_W    SW_p
+  <chr>  <chr>     <int> <dbl>   <dbl>
+1 female PEA          20 0.923 0.112  
+2 female veh          19 0.904 0.0585 
+3 male   PEA          20 0.842 0.00398
+4 male   veh          20 0.811 0.00125
+
+Tutti i gruppi normali (p > 0.05): FALSE
+→ Almeno un gruppo non normale: si usano test non parametrici
+  (Mann-Whitney U + Cliff's delta)
+
+=======================================================================
+  KRUSKAL-WALLIS (analisi omnibus di contesto)
+=======================================================================
+
+Kruskal-Wallis: chi-sq = 30.264, df = 3, p = 0.000001
+
+=======================================================================
+  CONFRONTO 1: Tg MASCHI apicali (CA1) — veh vs PEA
+  (Replicazione del dato pubblicato, Tortolani et al. 2025)
+=======================================================================
+
+Mann-Whitney U: W = 259.0, p = 0.1134
+  Median veh = 1.295 (IQR = 0.395, n = 20)
+  Median PEA = 1.490 (IQR = 0.783, n = 20)
+  Hodges-Lehmann estimate = 0.170
+  IC 95%: [-0.030, 0.470]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cliff's delta = 0.295  [IC 95%: -0.075, 0.593]
+  Interpretazione: small
+
+=======================================================================
+  CONFRONTO 2: Tg FEMMINE apicali (CA1) — veh vs PEA
+  (Estensione alle femmine — dato nuovo)
+=======================================================================
+
+Mann-Whitney U: W = 232.0, p = 0.2434
+  Median veh = 2.270 (IQR = 0.285, n = 19)
+  Median PEA = 2.640 (IQR = 1.392, n = 20)
+  Hodges-Lehmann estimate = 0.597
+  IC 95%: [-0.160, 1.010]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cliff's delta = 0.221  [IC 95%: -0.172, 0.553]
+  Interpretazione: small
+
+=======================================================================
+  RIEPILOGO — APICALI (CA1)
+=======================================================================
+
+Confronto                   W        p    Cliff's d  Magnitude Bonf.(p<.025)
+------------------------------------------------------------------------------ 
+Maschi (PEA vs veh)     259.0   0.1134        0.295      small NO
+Femmine (PEA vs veh)    232.0   0.2434        0.221      small NO
+
+-----------------------------------------------------------------------
+Interpretazione Cliff's delta:
+  |d| < 0.147 = trascurabile, 0.147-0.330 = piccolo,
+  0.330-0.474 = medio, > 0.474 = grande
+-----------------------------------------------------------------------
+
+indexing basal_spine.csv [=====================================================================================] 175.56MB/s, eta:  0s                                                                                                                                     =======================================================================
+  SPINE DENDRITICHE BASALI (CA1) — CONFRONTI PIANIFICATI (Solo Tg2576)
+  Ipotesi a priori: PEA ripristina la densità in entrambi i sessi
+  Correzione Bonferroni per 2 confronti (α = 0.025)
+=======================================================================
+
+--- Statistiche descrittive ---
+
+# A tibble: 4 × 8
+  sex    treatment     n  mean    sd median   min   max
+  <chr>  <chr>     <int> <dbl> <dbl>  <dbl> <dbl> <dbl>
+1 female PEA          20  2.61 0.823   2.64  1.45  4.03
+2 female veh          19  2.11 0.348   2.11  1.2   2.49
+3 male   PEA          20  1.60 0.470   1.5   0.9   2.46
+4 male   veh          20  1.21 0.522   1.21  0.44  2.24
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+# A tibble: 4 × 5
+  sex    treatment     n  SW_W   SW_p
+  <chr>  <chr>     <int> <dbl>  <dbl>
+1 female PEA          20 0.902 0.0445
+2 female veh          19 0.863 0.0109
+3 male   PEA          20 0.877 0.0155
+4 male   veh          20 0.934 0.187 
+
+Tutti i gruppi normali (p > 0.05): FALSE
+→ Almeno un gruppo non normale: si usano test non parametrici
+  (Mann-Whitney U + Cliff's delta)
+
+=======================================================================
+  KRUSKAL-WALLIS (analisi omnibus di contesto)
+=======================================================================
+
+Kruskal-Wallis: chi-sq = 36.000, df = 3, p = 0.000000
+
+=======================================================================
+  CONFRONTO 1: Tg MASCHI basali (CA1) — veh vs PEA
+  (Replicazione del dato pubblicato, Tortolani et al. 2025)
+=======================================================================
+
+Mann-Whitney U: W = 298.0, p = 0.0083
+  Median veh = 1.215 (IQR = 0.520, n = 20)
+  Median PEA = 1.500 (IQR = 0.448, n = 20)
+  Hodges-Lehmann estimate = 0.320
+  IC 95%: [0.090, 0.770]
+
+  p < 0.025 (Bonferroni)? SI
+
+  Cliff's delta = 0.490  [IC 95%: 0.135, 0.734]
+  Interpretazione: large
+
+=======================================================================
+  CONFRONTO 2: Tg FEMMINE basali (CA1) — veh vs PEA
+  (Estensione alle femmine — dato nuovo)
+=======================================================================
+
+Mann-Whitney U: W = 234.5, p = 0.2162
+  Median veh = 2.110 (IQR = 0.320, n = 19)
+  Median PEA = 2.645 (IQR = 1.200, n = 20)
+  Hodges-Lehmann estimate = 0.688
+  IC 95%: [-0.080, 1.060]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cliff's delta = 0.234  [IC 95%: -0.167, 0.569]
+  Interpretazione: small
+
+=======================================================================
+  RIEPILOGO — BASALI (CA1)
+=======================================================================
+
+Confronto                   W        p    Cliff's d  Magnitude Bonf.(p<.025)
+------------------------------------------------------------------------------ 
+Maschi (PEA vs veh)     298.0   0.0083        0.490      large SI *
+Femmine (PEA vs veh)    234.5   0.2162        0.234      small NO
+
+-----------------------------------------------------------------------
+Interpretazione Cliff's delta:
+  |d| < 0.147 = trascurabile, 0.147-0.330 = piccolo,
+  0.330-0.474 = medio, > 0.474 = grande
+-----------------------------------------------------------------------
+

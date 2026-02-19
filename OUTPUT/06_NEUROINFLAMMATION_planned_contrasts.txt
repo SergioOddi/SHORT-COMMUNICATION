@@ -1,0 +1,228 @@
+Analisi eseguita il: 2026-02-19 15:02:06 
+
+indexing gfap.csv [=============================================================================================] 42.78MB/s, eta:  0s                                                                                                                                     =======================================================================
+  GFAP (ASTROGLIOSI) — CONFRONTI PIANIFICATI (Solo Tg2576)
+  Ipotesi a priori: PEA riduce il marcatore in entrambi i sessi
+  Correzione Bonferroni per 2 confronti (α = 0.025)
+=======================================================================
+
+--- Statistiche descrittive ---
+
+# A tibble: 4 × 8
+  sex    treatment     n   mean     sd median    min    max
+  <chr>  <chr>     <int>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>
+1 female PEA           4 0.0643 0.0204 0.0687 0.0359 0.0838
+2 female veh           4 0.106  0.0536 0.0979 0.0579 0.171 
+3 male   PEA           5 0.0951 0.0477 0.108  0.0378 0.157 
+4 male   veh           5 0.0644 0.0294 0.0640 0.0231 0.106 
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+# A tibble: 4 × 5
+  sex    treatment     n  SW_W  SW_p
+  <chr>  <chr>     <int> <dbl> <dbl>
+1 female PEA           4 0.927 0.580
+2 female veh           4 0.898 0.423
+3 male   PEA           5 0.955 0.770
+4 male   veh           5 0.937 0.646
+
+Tutti i gruppi normali (p > 0.05): TRUE
+→ Test parametrici: Welch t-test + Cohen's d
+
+⚠ ATTENZIONE: n minimo = 4. Potenza statistica limitata.
+
+=======================================================================
+  CONFRONTO: Tg MASCHI — veh vs PEA
+  (Replicazione del dato pubblicato, Tortolani et al. 2025)
+=======================================================================
+
+Welch t-test: t = -1.223, df = 6.7, p = 0.2629
+  Mean veh = 0.064394 (SD = 0.029408, n = 5)
+  Mean PEA = 0.095055 (SD = 0.047724, n = 5)
+  Differenza media (veh - PEA) = -0.030660
+  IC 95%: [-0.090569, 0.029248]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cohen's d = -0.774  [IC 95%: -2.286, 0.738]
+  Interpretazione: medium
+
+=======================================================================
+  CONFRONTO: Tg FEMMINE — veh vs PEA
+  (Estensione alle femmine — dato nuovo)
+=======================================================================
+
+Welch t-test: t = 1.458, df = 3.8, p = 0.2213
+  Mean veh = 0.106102 (SD = 0.053646, n = 4)
+  Mean PEA = 0.064266 (SD = 0.020366, n = 4)
+  Differenza media (veh - PEA) = 0.041836
+  IC 95%: [-0.039086, 0.122759]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cohen's d = 1.031  [IC 95%: -0.811, 2.873]
+  Interpretazione: large
+
+=======================================================================
+  RIEPILOGO — GFAP (ASTROGLIOSI)
+=======================================================================
+
+Confronto                Stat        p    Cohen's d  Magnitude Bonf.(p<.025)
+------------------------------------------------------------------------------ 
+Maschi (veh vs PEA)    -1.223   0.2629       -0.774     medium NO
+Femmine (veh vs PEA)    1.458   0.2213        1.031      large NO
+
+indexing iba1.csv [=============================================================================================] 42.78MB/s, eta:  0s                                                                                                                                     =======================================================================
+  IBA1 (MICROGLIOSI) — CONFRONTI PIANIFICATI (Solo Tg2576)
+  Ipotesi a priori: PEA riduce il marcatore in entrambi i sessi
+  Correzione Bonferroni per 2 confronti (α = 0.025)
+=======================================================================
+
+--- Statistiche descrittive ---
+
+# A tibble: 4 × 8
+  sex    treatment     n    mean      sd  median     min     max
+  <chr>  <chr>     <int>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+1 female PEA           4 0.00404 0.00197 0.00381 0.00190 0.00665
+2 female veh           4 0.0174  0.0167  0.0156  0.00256 0.0359 
+3 male   PEA           5 0.00460 0.00398 0.00363 0.00152 0.0115 
+4 male   veh           5 0.00301 0.00197 0.00240 0.00164 0.00643
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+# A tibble: 4 × 5
+  sex    treatment     n  SW_W   SW_p
+  <chr>  <chr>     <int> <dbl>  <dbl>
+1 female PEA           4 0.967 0.820 
+2 female veh           4 0.856 0.245 
+3 male   PEA           5 0.792 0.0701
+4 male   veh           5 0.757 0.0348
+
+Tutti i gruppi normali (p > 0.05): FALSE
+→ Test non parametrici: Mann-Whitney U + Cliff's delta
+
+⚠ ATTENZIONE: n minimo = 4. Potenza statistica limitata.
+
+=======================================================================
+  CONFRONTO: Tg MASCHI — veh vs PEA
+  (Replicazione del dato pubblicato, Tortolani et al. 2025)
+=======================================================================
+
+Mann-Whitney U: W = 10.0, p = 0.6905
+  Median veh = 0.002395 (IQR = 0.001023, n = 5)
+  Median PEA = 0.003629 (IQR = 0.001973, n = 5)
+  Hodges-Lehmann estimate = -0.000836
+  IC 95%: [-0.009059, 0.002804]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cliff's delta = -0.200  [IC 95%: -0.744, 0.504]
+  Interpretazione: small
+
+=======================================================================
+  CONFRONTO: Tg FEMMINE — veh vs PEA
+  (Estensione alle femmine — dato nuovo)
+=======================================================================
+
+Mann-Whitney U: W = 11.0, p = 0.4857
+  Median veh = 0.015599 (IQR = 0.025742, n = 4)
+  Median PEA = 0.003809 (IQR = 0.001594, n = 4)
+  Hodges-Lehmann estimate = 0.011325
+  IC 95%: [-0.004088, 0.034050]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cliff's delta = 0.375  [IC 95%: -0.538, 0.883]
+  Interpretazione: medium
+
+=======================================================================
+  RIEPILOGO — IBA1 (MICROGLIOSI)
+=======================================================================
+
+Confronto                Stat        p    Cliff's d  Magnitude Bonf.(p<.025)
+------------------------------------------------------------------------------ 
+Maschi (veh vs PEA)    10.000   0.6905       -0.200      small NO
+Femmine (veh vs PEA)   11.000   0.4857        0.375     medium NO
+
+indexing inos.csv [=============================================================================================] 35.79MB/s, eta:  0s                                                                                                                                     =======================================================================
+  INOS (PRODUZIONE NO) — CONFRONTI PIANIFICATI (Solo Tg2576)
+  Ipotesi a priori: PEA riduce il marcatore in entrambi i sessi
+  Correzione Bonferroni per 2 confronti (α = 0.025)
+=======================================================================
+
+--- Statistiche descrittive ---
+
+# A tibble: 4 × 8
+  sex    treatment     n      mean        sd    median        min      max
+  <chr>  <chr>     <int>     <dbl>     <dbl>     <dbl>      <dbl>    <dbl>
+1 female PEA           4 0.000102  0.0000222 0.000103  0.0000760  0.000127
+2 female veh           4 0.000129  0.0000286 0.000130  0.0000944  0.000164
+3 male   PEA           5 0.0000717 0.000102  0.0000253 0.00000311 0.000247
+4 male   veh           5 0.0000691 0.0000819 0.0000474 0.00000407 0.000203
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+# A tibble: 4 × 5
+  sex    treatment     n  SW_W   SW_p
+  <chr>  <chr>     <int> <dbl>  <dbl>
+1 female PEA           4 0.980 0.903 
+2 female veh           4 0.989 0.953 
+3 male   PEA           5 0.759 0.0360
+4 male   veh           5 0.851 0.198 
+
+Tutti i gruppi normali (p > 0.05): FALSE
+→ Test non parametrici: Mann-Whitney U + Cliff's delta
+
+⚠ ATTENZIONE: n minimo = 4. Potenza statistica limitata.
+
+=======================================================================
+  CONFRONTO: Tg MASCHI — veh vs PEA
+  (Replicazione del dato pubblicato, Tortolani et al. 2025)
+=======================================================================
+
+Mann-Whitney U: W = 13.0, p = 1.0000
+  Median veh = 0.000047 (IQR = 0.000077, n = 5)
+  Median PEA = 0.000025 (IQR = 0.000063, n = 5)
+  Hodges-Lehmann estimate = 0.000001
+  IC 95%: [-0.000200, 0.000178]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cliff's delta = 0.040  [IC 95%: -0.558, 0.611]
+  Interpretazione: negligible
+
+=======================================================================
+  CONFRONTO: Tg FEMMINE — veh vs PEA
+  (Estensione alle femmine — dato nuovo)
+=======================================================================
+
+Mann-Whitney U: W = 13.0, p = 0.2000
+  Median veh = 0.000130 (IQR = 0.000024, n = 4)
+  Median PEA = 0.000103 (IQR = 0.000027, n = 4)
+  Hodges-Lehmann estimate = 0.000026
+  IC 95%: [-0.000032, 0.000088]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cliff's delta = 0.625  [IC 95%: -0.258, 0.939]
+  Interpretazione: large
+
+=======================================================================
+  RIEPILOGO — INOS (PRODUZIONE NO)
+=======================================================================
+
+Confronto                Stat        p    Cliff's d  Magnitude Bonf.(p<.025)
+------------------------------------------------------------------------------ 
+Maschi (veh vs PEA)    13.000   1.0000        0.040 negligible NO
+Femmine (veh vs PEA)   13.000   0.2000        0.625      large NO
+
+=======================================================================
+  TABELLA RIASSUNTIVA — MARCATORI NEUROINFIAMMATORI
+=======================================================================
+
+                      | MASCHI            p         ES | FEMMINE           p         ES
+------------------------------------------------------------------------------------- 
+GFAP     Cohen's d    | medium       0.2629     -0.774 | large        0.2213      1.031
+IBA1     Cliff's d    | small        0.6905     -0.200 | medium       0.4857      0.375
+iNOS     Cliff's d    | negligible   1.0000      0.040 | large        0.2000      0.625
+
