@@ -55,6 +55,20 @@
 
 ---
 
+## VERSIONE 4-MODIFIED — Corretta sui dati reali (196 parole)
+
+> **Note:** V4 originale riportava "~4-fold higher FAAH and NAAA activity" e attribuiva la resistenza a entrambi gli enzimi. I dati reali mostrano che (1) l'upregulation di FAAH è ~2-fold, non 4-fold; (2) NAAA mRNA non è significativamente aumentata nelle femmine (p=0.235); (3) l'effetto della PEA sulla cognizione è attenuato ma non completamente assente (d=0.61). La versione corretta riflette questa realtà.
+
+**Background:** Palmitoylethanolamide (PEA) exerts robust neuroprotective effects in male Tg2576 mice. We investigated whether this efficacy extends to females, given the well-documented sexual dimorphism in Alzheimer's disease (AD) and endocannabinoid metabolism.
+
+**Methods:** Female Tg2576 mice received PEA (30 mg/kg/day, 6 months). We assessed cognitive function (Novel Object Recognition Test), hippocampal dendritic spine density, and nitrosative stress (3-nitrotyrosine). FAAH expression and enzymatic activity were quantified in male versus female Tg2576 hippocampus to investigate sex-specific PEA catabolism.
+
+**Results:** PEA treatment was substantially less effective in females than in males: cognitive improvement and reduction of nitrosative stress were non-significant, and basal dendritic spine density was not restored. Effect sizes in females were approximately half those observed in males across all endpoints. Mechanistically, female Tg2576 mice exhibited ~2-fold higher FAAH mRNA (2.55×), protein (2.15×), and enzymatic activity (2.12×) compared to males — a sex difference independent of genotype — providing a plausible pharmacokinetic basis for attenuated PEA efficacy.
+
+**Conclusion:** FAAH hyperactivity, likely driven by estrogen-responsive elements in the gene promoter, emerges as a primary determinant of sex-dependent resistance to PEA in Tg2576 mice. These findings support sex-stratified preclinical studies and suggest that female AD patients may benefit from combination therapies incorporating FAAH inhibitors.
+
+---
+
 ## VERSIONE 5 - STILE "NATURE-LIKE" (235 parole)
 
 Sexual dimorphism profoundly influences Alzheimer's disease (AD) pathogenesis, yet most preclinical therapeutic studies employ only male subjects. Palmitoylethanolamide (PEA), an endogenous lipid mediator with PPAR-α agonist properties, ameliorates cognitive deficits and synaptic loss in male Tg2576 mice. Here, we demonstrate complete therapeutic failure of PEA in female Tg2576 mice and suggest a possible underlying molecular mechanism.
