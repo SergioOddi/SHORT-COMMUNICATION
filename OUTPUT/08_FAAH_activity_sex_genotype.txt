@@ -1,0 +1,100 @@
+=======================================================================
+  ATTIVITÀ ENZIMATICA FAAH — Sesso × Genotipo (solo veicolo)
+  Ipotesi: attività FAAH maggiore nelle femmine (coerente con
+  sovraespressione mRNA/proteina osservata nella sezione 3.4)
+  Correzione Bonferroni per 2 confronti pianificati (α = 0.025)
+=======================================================================
+Analisi eseguita il: 2026-02-20 14:25:55 
+
+--- Statistiche descrittive ---
+
+# A tibble: 4 × 8
+  genotype sex        n  mean    sd median   min   max
+  <chr>    <chr>  <int> <dbl> <dbl>  <dbl> <dbl> <dbl>
+1 Tg       female     3  4.13 0.483   4.03  3.71  4.66
+2 Tg       male       3  1.95 0.486   1.84  1.53  2.48
+3 WT       female     3  3.58 0.401   3.57  3.19  3.99
+4 WT       male       3  2.12 0.681   2.25  1.38  2.73
+
+  Fold change (femmine / maschi) — Tg = 2.12
+  Fold change (femmine / maschi) — WT = 1.69
+
+--- Test di normalità (Shapiro-Wilk) ---
+
+# A tibble: 4 × 5
+  genotype sex        n  SW_W  SW_p
+  <chr>    <chr>  <int> <dbl> <dbl>
+1 Tg       female     3 0.964 0.637
+2 Tg       male       3 0.963 0.630
+3 WT       female     3 0.999 0.938
+4 WT       male       3 0.973 0.684
+
+Tutti i gruppi normali (p > 0.05): TRUE
+
+=======================================================================
+  ANOVA 2 VIE (Sex × Genotype) — analisi omnibus
+=======================================================================
+
+             Df Sum Sq Mean Sq F value   Pr(>F)    
+sex           1  9.963   9.963  36.424 0.000311 ***
+genotype      1  0.109   0.109   0.397 0.546061    
+sex:genotype  1  0.384   0.384   1.403 0.270187    
+Residuals     8  2.188   0.274                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Eta-squared (η²):
+  Sex:              η² = 0.7880
+  Genotype:         η² = 0.0086
+  Sex × Genotype:   η² = 0.0304
+
+=======================================================================
+  CONFRONTO 1: Tg2576 — MASCHI vs FEMMINE
+  (Conferma funzionale della sovraespressione FAAH)
+=======================================================================
+
+→ Test parametrico: Welch t-test + Cohen's d
+
+Welch t-test: t = 5.508, df = 4.0, p = 0.0053
+  Mean maschi  = 1.9515 (SD = 0.4861, n = 3)
+  Mean femmine = 4.1315 (SD = 0.4835, n = 3)
+  Differenza media (femmine - maschi) = 2.1800
+  IC 95%: [1.0810, 3.2790]
+
+  p < 0.025 (Bonferroni)? SI
+
+  Cohen's d = 4.497  [IC 95%: 0.239, 8.755]
+  Interpretazione: large
+  (d positivo → femmine > maschi)
+
+=======================================================================
+  CONFRONTO 2: WT — MASCHI vs FEMMINE
+  (Il dimorfismo sessuale è presente anche nei wild-type?)
+=======================================================================
+
+→ Test parametrico: Welch t-test + Cohen's d
+
+Welch t-test: t = 3.211, df = 3.2, p = 0.0439
+  Mean maschi  = 2.1189 (SD = 0.6808, n = 3)
+  Mean femmine = 3.5835 (SD = 0.4007, n = 3)
+  Differenza media (femmine - maschi) = 1.4646
+  IC 95%: [0.0715, 2.8578]
+
+  p < 0.025 (Bonferroni)? NO
+
+  Cohen's d = 2.622  [IC 95%: -0.469, 5.713]
+  Interpretazione: large
+  (d positivo → femmine > maschi)
+
+=======================================================================
+  RIEPILOGO — ATTIVITÀ ENZIMATICA FAAH
+  Confronto: femmine vs maschi (vehicle)
+=======================================================================
+
+Confronto                  Test     Stat          p         ES     FC Bonf.(p<.025)
+---------------------------------------------------------------------------------- 
+Tg (F vs M)           Cohen's d    5.508     0.0053      4.497   2.12 SI *
+WT (F vs M)           Cohen's d    3.211     0.0439      2.622   1.69 NO
+
+FC = fold change (femmine / maschi). FC > 1 = attività maggiore nelle femmine.
+ES positivo = femmine > maschi.
