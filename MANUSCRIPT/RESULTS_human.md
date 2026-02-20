@@ -1,0 +1,28 @@
+# Results and Discussion
+
+## PEA rescues cognitive and synaptic deficits in male but not female Tg2576 mice
+
+In a previous study we established that palmitoylethanolamide (PEA) exerts robust neuroprotective effects in male Tg2576 mice (Tortolani et al., 2025). Here, we investigated whether this efficacy extends to females, given the well-documented sexual dimorphism in Alzheimer's disease (AD) and endocannabinoid metabolism. Firstly, we assessed whether chronic PEA treatment (30 mg/kg/day for 6 months) improves cognitive performance in female Tg2576 mice of 12 months of age, as evaluated by recognition memory through the novel object recognition test (NORT). Vehicle-treated females displayed impaired recognition memory relative to wild-type littermates (discrimination index: 53.8 vs. 66.1%), confirming that amyloid pathology compromises cognition in both sexes at this age. However, while PEA robustly restored recognition memory in males (Cohen's d = 1.26, p = 0.013), the treatment effect in females was modest and non-significant (d = 0.61, p = 0.152). Notably, the effect size in females was approximately half that observed in males, suggesting an attenuated rather than absent response.
+
+[to be continue...]
+[This sex-dependent dissociation extended to synaptic architecture. In hippocampal CA1 pyramidal neurons, PEA significantly increased basal dendritic spine density in males (Cliff's delta = 0.49, p = 0.008) but not in females (delta = 0.23, p = 0.216), with no significant effects on apical dendrites in either sex. Of note, female Tg2576 mice exhibited substantially higher baseline spine densities than males in both compartments (apical: 2.21 vs. 1.42; basal: 2.11 vs. 1.21 spines/um), a pattern preserved in wild-type animals and suggestive of intrinsic sexual dimorphism in dendritic morphology.
+
+## PEA reduces hippocampal nitrosative stress selectively in males
+
+The same sex-dependent pattern emerged for neurochemical endpoints. Hippocampal 3-nitrotyrosine (3-NT) levels were approximately twice as high in male as in female Tg2576 mice (Sex: F(1,24) = 60.45, p < 0.001, eta-squared = 0.576), indicating a pronounced sexual dimorphism in basal nitrosative burden. PEA elicited a striking 30% reduction in 3-NT levels in males (d = 2.75, p = 0.0002) — the largest effect size across all endpoints — but failed to significantly lower 3-NT in females (d = 0.70, p = 0.223).
+
+A coherent pattern thus emerges across cognitive (NOR), structural (spine density), and biochemical (3-NT) readouts: PEA consistently exerts large therapeutic effects in males (d = 1.26–2.75) while its efficacy is systematically attenuated in females (d = 0.61–0.70), despite the presence of amyloid-driven pathology in both sexes. This convergent dissociation pointed to a sex-specific factor limiting PEA bioavailability or signaling in the female brain.
+
+## FAAH overexpression in females provides a mechanistic explanation
+
+We hypothesized that enhanced enzymatic degradation of PEA could account for its diminished efficacy in females. PEA catabolism in the brain is primarily mediated by fatty acid amide hydrolase (FAAH), whose promoter contains estrogen-responsive elements (ERE), raising the possibility of sex-dependent transcriptional regulation.
+
+Female Tg2576 mice expressed 2.55-fold more FAAH mRNA than males (Cliff's delta = 0.94, p = 0.004), with near-complete separation between sexes. This transcriptional upregulation was faithfully recapitulated at the protein level, with females showing 2.15-fold higher FAAH protein (d = 2.91, p = 0.0006) — the largest effect size in the study. NAAA, a secondary PEA-hydrolyzing enzyme, showed a non-significant trend toward higher expression in females (1.46-fold, p = 0.235), consistent with a minor contributory role.
+
+Critically, the molecular upregulation translated into a functional increase in catabolic capacity. A two-way ANOVA of FAAH enzymatic activity (Sex x Genotype) revealed Sex as the overwhelmingly dominant source of variance (eta-squared = 0.788), with neither Genotype (p = 0.546) nor the interaction (p = 0.270) reaching significance. Female Tg2576 mice exhibited 2.12-fold higher FAAH activity than males (d = 4.50, p = 0.005), and the same direction of effect was observed in wild-type animals, indicating that this sex difference is an intrinsic biological trait independent of amyloid pathology.
+
+## An integrated mechanistic framework
+
+These findings establish a coherent mechanistic chain linking sex-dependent FAAH biology to the attenuation of PEA therapeutic efficacy in females (Fig. X). The ~2-fold upregulation is remarkably consistent across three independent readouts — mRNA (2.55x), protein (2.15x), and enzymatic activity (2.12x) — arguing against post-transcriptional artifacts and supporting a transcriptionally driven mechanism, consistent with estrogen-mediated activation of ERE in the FAAH promoter. Elevated FAAH activity in females likely creates a "metabolic sink" that degrades exogenous PEA before it accumulates to therapeutically effective concentrations, thereby abrogating the neuroprotective cascade observed in males.
+
+These results carry immediate translational implications. Given that women constitute approximately two-thirds of Alzheimer's patients and exhibit more aggressive disease progression, the identification of a sex-specific pharmacological resistance mechanism underscores the necessity of sex-stratified preclinical evaluation. Moreover, our data provide a rationale for combination strategies pairing PEA with FAAH inhibitors in female subjects, an approach that may restore therapeutic efficacy by prolonging PEA bioavailability at the site of action.]
